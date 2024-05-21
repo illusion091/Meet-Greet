@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Meet&Greet~Login Page</title>
+    <link rel="icon" type="image" href="mg.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        nav a:hover{
+           background-color: #b9cbc1;
+        }
+        .container{
+            position: relative;
+            width: 30%;
+            border-right: 1px solid;
+            height: 500px;
+            margin-left: 10px;
+        }
+        
+        
+        #a{
+            float: right;
+            margin-top: -500px;
+            height: 550px;    
+            width: 400px;
+            margin-right: 300px;
+        }
+        
+        button{
+            padding:12px 50px 10px 50px;
+            background-color: #c7c8d6;
+            color: black;
+            border-radius: 5px;
+            border: 2px solid black;
+
+        }
+       button:hover{
+            background-color: #b9cbc1;
+        }
+        body{
+            background-color: #f3f3f3;
+        }
+        #b{
+            mix-blend-mode: multiply;
+            height: 175px;
+            width: 200px;
+            margin-left: 50px;
+        }
+        nav a{
+            background-color: #c7c8d6;
+            padding-left: 0px;
+            border: 2px solid;
+            padding:10px 20px 10px 20px;
+            margin-left: -40px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+        nav, li, ul{
+            display: inline;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        nav{
+            overflow: hidden;
+        }
+        #z{
+            height: 15px;
+            width: 15px;
+            margin-bottom: -2px;
+        }
+        button{
+            padding:12px 22px 10px 22px;
+            border-radius: 10px;
+        }
+        
+        .b #Email_error, .b #Pass_error{
+            margin-top: 5px;
+            width: 275px;
+            font-size: 11px;
+            color: #C62828;
+            background: rgba(255, 0, 0, 0.1);
+            text-align: center;
+            padding: 5px 8px;
+            border-radius: 3px;
+            border: 1px solid #EF9A9A;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="home.html"><h1>Meet&Greet</h1></a><hr>
+    <div class="container">
+        <form class="b" method="post" name="form" action="Login.html">
+       <br> <img id="b" src="mg.png"><br>
+        <input autocomplete="off" id="save" type="text" name="name" placeholder="Username, Phone number or Email address" style="width:265px; height:30px;">
+        <div id="Email_error">Please enter your username, phone number or email address</div><br><br>
+        <input type="password" id="save" name="password" placeholder="Password" style="width:265px; height:30px;">
+        <div id="Pass_error">Please enter your password</div>
+        <BR>
+        <BR>
+        <input type="checkbox" id="save">
+
+        <label>Save login info</label><br><br>
+        <button onclick="return login();" id="k">Login</button>
+        <nav>
+            <ul>
+                <li><a href="signup.html">Sign up</a></li>
+            </ul>
+        </nav>
+        
+        <br><br>
+        <fieldset style="border-top:1px solid ; border-right: 0px; border-bottom: 0px; border-left: 0px; text-align: center; margin-right: 12px;">
+        <legend>OR</legend>
+        </fieldset>
+        <center><a onclick="return f_login();" href="Login.html" style="color: darkblue;"><img id="z" src="app.png">&nbsp;Login with facebook</a><br>
+            <p id="para" style="color:red;"></p>
+            <a href="forgot.html" style="font-size: 10px; color: royalblue;">Forgot Password?</a> </center>
+    </form>
+</div>
+    <img id="a" src="ap.gif">
+
+</body>
+<script>
+     function f_login(){
+        alert("Successfully logged in with Facebook.");
+       
+    }
+
+    function login(){
+        var email=document.forms['form']['name'];
+        var pass=document.forms['form']['password'];
+
+        var email_error=document.getElementById('Email_error');
+        var pass_error=document.getElementById('Pass_error');
+
+        
+
+        if(email.value.length==0){
+            email.style.border="1px solid red";
+            email_error.style.display="block";
+            email.focus();
+            return false;
+        }
+        else{
+            email.style.border='1px solid silver';
+            email_error.style.display='none';
+        }
+         if(pass.value.length==0){
+            pass.style.border="1px solid red";
+            pass_error.style.display="block";
+            pass.focus();
+            return false;
+        }
+        else{
+            pass.style.border="1px solid silver";
+            pass_error.style.display='none';
+        }
+        if(email.value==="saku.chan" || email.value==='9876543210'){
+            email.style.border="1px solid silver";
+            email.focus();
+        }
+        else{
+            email.style.border="1px solid red";
+            email.focus();
+            para.innerHTML="Incorrect username, email or phone number";
+            return false;
+        }
+        if(email.value==="saku.chan" && pass.value==='sakura@123' || email.value==='9876543210' && pass.value==='sakura@123'){
+            pass.style.border="1px solid silver";
+            pass.focus();
+            return true;
+        }
+        else{
+            pass.style.border="1px solid red";
+            pass.focus();
+            para.innerHTML="Sorry, your password was incorrect. Please double-check your password.";
+            return false;
+        }
+        
+        
+    }
+   
+</script>
+</html>

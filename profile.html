@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Meet&Greet~saku.chan</title>
+	<link rel="icon" type="image" href="mg.png">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <style>
+body{
+			background-color: #f3f3f3;
+		}
+		 a{
+
+            text-decoration: none;
+        }
+         
+    	hr{
+    		border: 0.5px solid;
+    		margin-left: -20px;
+    	}
+    	
+    	.z{
+    		margin-left: 230px;
+    		text-align: justify;
+    	}
+    	.saku{
+    		height: 200px;
+    		width: 200px;
+    		margin-top: 20px;
+    		border-radius: 100%;
+    	}
+    	
+    	#name, #fn, #m{ 
+
+    		margin-left: 210px;
+    		margin-top: -90px;
+    	}
+    	#fn{
+    		font-size: 30px;
+    	}
+    	#name{
+    		font-size: 15px;
+    		color: grey;
+    		margin-bottom: 30px;
+    	}
+    	#m{
+    		margin-bottom: 50px;
+    	}    	#s{
+    		height: 400px;
+    		width: 350px;
+    		border: 1px solid;
+    	}
+    	#s:hover{
+    		background: lightgrey;
+    	}
+    	.wrap{
+    		border: 1px solid lightgrey;
+    	}
+    </style>
+</head>
+<body>
+	<div class="x"><form><a href="Login.html"><img id="b"src="mg.png"></a><br>
+		<a href="Login.html"><img src="profileee.png" id="img23"></a><br>
+		<a href="profile.html"><img src="opt.png" id="img23"></a><br>
+		<a href="Center.html"><img src="search.png" id="img23"></a><br>
+		<a href="Search.html"><img src="plus.png" id="img23"></a><br>
+		<img src="home.png" id="img23" onmouseover ="return toggleMenu();">
+		<div class="wrap" id="Menu">
+			<div class="menu">
+				<hr style="margin-left: -19px;">
+
+				<a href="profile.html" class="link">
+					<img src="p0.png">
+					<p>Edit profile</p>
+					<span>></span>
+				</a><br>
+			
+			<a href="settings.html" class="link">
+				<img src="set1.png">
+				<p>Settings & privacy</p>
+				<span>></span>
+			</a><br>
+			<a href="Center.html" class="link">
+				<img src="search.png">
+				<p>Help & support</p>
+				<span>></span>
+			</a><br>
+			<a href="home.html" class="link">
+				<img src="log5.png">
+				<p>Logout</p>
+				<span>></span>
+			</a><br>
+		</div>
+	</div><br><br>
+
+
+	</div>
+	
+		
+	</form>
+</div>
+
+<div class="z">
+	<div class="a">
+		
+		<img src="saku.jpg" id="s">
+	</div>
+</div>
+</body>
+<script>
+	function toggleMenu(){
+		let subMenu = document.getElementById("Menu");
+		subMenu.classList.toggle("open-menu");
+	}
+	</script>
+</html>

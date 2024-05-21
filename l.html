@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Reset</title>
+	<link rel="icon" type="image" href="lo.png">
+     <link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+        form{
+        	border: 1px solid;
+        	width: 40%;
+        }
+        input{
+        	padding: 10px;
+        	width: 220px;
+        }
+        #i{
+        	width: 100%;
+        	background-color: #f2f2f2;
+        	padding-top:10px;
+        	padding-bottom: 10px;
+        	margin-bottom: 0px;
+        }
+        #i:hover{
+        	background-color: lightgrey;
+        }
+        .m #incorrect{
+        	margin-top: 5px;
+            width: 200px;
+            font-size: 11px;
+            color: #C62828;
+            background: rgba(255, 0, 0, 0.1);
+            text-align: center;
+            padding: 5px 8px;
+            border-radius: 3px;
+            border: 1px solid #EF9A9A;
+            display: none;
+        }
+        button{
+            padding:12px 50px 10px 50px;
+            background-color: #c7c8d6;
+            color: blacj;
+            border-radius: 5px;
+            border: 2px solid black;
+
+        }
+        button:hover{
+            background-color: #b9cbc1;
+        }
+	</style>
+</head>
+<body>
+ <a href="home.html"><h1>Meet&Greet</h1></a><hr><br>
+ <center>
+ 	<form name="form" class="m" action="Login.html"><br>
+ 		<img src="lock.png">
+ 		<p style="color: grey;">Enter pin</p>
+ 		<input type="text" name="forgot" placeholder="Enter PIN"><br>
+ 		<div id="incorrect">Enter Pin</div><br>
+ 		<button onclick="return forgots();">Login</button><br><br>
+ 		<a href="help.html" style="color:royalblue; font-size: 12px;">Can't reset your password?</a><br>
+        <p id="para" style="color:red;"></p>
+ 		<form>
+ 			<fieldset style="border-top:1px solid ; border-right: 0px; border-bottom: 0px; border-left: 0px; text-align: center; margin: 50px;">
+ 				<legend>OR</legend>
+ 			</fieldset>
+ 		
+ 		<a href="signup.html" style="color: black;">Create new account</a><br>
+ 		
+ 		<a href="home.html"><p id="i">Back to login</p></a>
+ 	</form>
+ 	</form>
+ </center>
+</body>
+<script>
+	function forgots(){
+		var a=document.forms['form']['forgot'];
+		var b=document.getElementById('incorrect');
+
+		if(a.value.length==0){
+            a.style.border="1px solid red";
+            b.style.display="block";
+            a.focus();
+            return false;
+        }
+        if(a.value!="1234"){
+            a.style.border="1px solid red";
+            a.focus();
+            para.innerHTML="Incorrect PIN. Try again.";
+            return false;
+        }
+	}
+</script>
+</html>
